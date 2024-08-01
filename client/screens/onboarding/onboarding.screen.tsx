@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
 import { useFonts, Asap_700Bold } from "@expo-google-fonts/asap";
 import {
@@ -24,7 +24,14 @@ export default function OnBoardingScreen() {
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
     >
       <View style={styles.firstContainer}>
-        <View></View>
+        <View>
+          <Image source={require('@/assets/logo')} style={styles.logo}/>
+          <Image source={require('@/assets/onboarding/shape_9')}/>
+        </View>
+        <View style={styles.titleWrapper}>
+          <Image style={styles.titleTextShape1}
+          source={require('@/assets/onboarding/shape_3')}/>
+        </View>
       </View>
     </LinearGradient>
   );
