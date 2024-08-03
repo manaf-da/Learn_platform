@@ -25,15 +25,22 @@ export default function OnBoardingScreen() {
     >
       <View style={styles.firstContainer}>
         <View>
-          <Image source={require('@/assets/logo.png')} style={styles.logo}/>
-          <Image source={require('@/assets/onboarding/shape_9.png')}/>
+          <Image source={require("@/assets/logo.png")} style={styles.logo} />
+          <Image source={require("@/assets/onboarding/shape_9.png")} />
         </View>
         <View style={styles.titleWrapper}>
-          <Image style={styles.titleTextShape1}
-          source={require('@/assets/onboarding/shape_3.png')}/>
-          <Text style={styles.titleText}>
-
+          <Image
+            style={styles.titleTextShape1}
+            source={require("@/assets/onboarding/shape_3.png")}
+          />
+          <Text style={[styles.titleText, { fontFamily: "Asap_700Bold" }]}>
+            Learning Platform
           </Text>
+          <Image style={styles.titleTextShape2} source={require('@/assets/onboarding/shape_2.png')} />
+        </View>
+        <View>
+          <Image style={styles.titleTextShape3} source={require('@/assets/onboarding/shape_6.png')}/>
+
         </View>
       </View>
     </LinearGradient>
