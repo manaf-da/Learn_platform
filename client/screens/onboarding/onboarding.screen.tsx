@@ -25,12 +25,15 @@ export default function OnBoardingScreen() {
     >
       <View style={styles.firstContainer}>
         <View>
-          <Image source={require('@/assets/logo')} style={styles.logo}/>
-          <Image source={require('@/assets/onboarding/shape_9')}/>
+          <Image source={require('@/assets/logo.png')} style={styles.logo}/>
+          <Image source={require('@/assets/onboarding/shape_9.png')}/>
         </View>
         <View style={styles.titleWrapper}>
           <Image style={styles.titleTextShape1}
-          source={require('@/assets/onboarding/shape_3')}/>
+          source={require('@/assets/onboarding/shape_3.png')}/>
+          <Text style={styles.titleText}>
+
+          </Text>
         </View>
       </View>
     </LinearGradient>

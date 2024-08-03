@@ -40,7 +40,7 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return <>{isLoggedIn ? <View></View> : <OnBoarding/>}</>;
 }
