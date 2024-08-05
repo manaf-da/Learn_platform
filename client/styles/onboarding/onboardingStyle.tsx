@@ -34,4 +34,25 @@ export const styles = StyleSheet.create({
     fontSize: hp("4%"),
     textAlign: "center",
   },
+  descriptionWrapper:{
+    marginTop:25
+  },
+  descriptionText:{
+    textAlign: "center",
+    color:"#575757",
+    fontSize: hp("2%")
+  },
+  buttonWrapper:{
+    backgroundColor: "#3f938C",
+    width: wp("50%"),
+    height: hp("6%"),
+    paddingVertical:18,
+    marginTop: 40,
+    borderRadius: 4,
+  },
+  buttonText:{
+    color: "white",
+    textAlign: "center",
+    fontSize: hp("2%")
+  }
 });
