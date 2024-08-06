@@ -10,6 +10,7 @@ import { styles } from "@/styles/onboarding/onboardingStyle";
 import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { router } from "expo-router";
 export default function OnBoardingScreen() {
   const fontSize = hp("1.5")
   let [fontsLoaded, fontError] = useFonts({
@@ -72,7 +73,8 @@ export default function OnBoardingScreen() {
             videos, quizzes & assignments
           </Text>
         </View>
-        <TouchableOpacity style={styles.buttonWrapper}>
+        <TouchableOpacity style={styles.buttonWrapper}
+        onPress={()=> router.push("/(routes)/welcome-intro")}>
           <Text style={[styles.buttonText,{fontFamily: "MerriweatherSans_700Bold"}  ]}>
              Start
           </Text>

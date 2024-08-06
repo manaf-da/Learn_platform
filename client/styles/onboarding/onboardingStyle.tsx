@@ -53,6 +53,6 @@ export const styles = StyleSheet.create({
   buttonText:{
     color: "white",
     textAlign: "center",
-    fontSize: hp("2%")
+    fontSize: hp("1.7%")
   }
 });
