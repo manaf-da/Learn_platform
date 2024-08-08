@@ -8,21 +8,21 @@ export const regularStyles = StyleSheet.create({
         justifyContent:"center"
     },
     buttonContainer:{
-        backgroundColor:"#4286f4",
+        backgroundColor:"#3f938C",
         width:responsiveWidth(88),
         height:responsiveHeight(2.5),
         borderRadius:5,
         marginHorizontal:5,
     },
     dotStyle:{
-        backgroundColor:"#4286f4",
+        backgroundColor:"#C6C7CC",
         height: responsiveHeight(1.5),
         width:responsiveHeight(1.5),
         borderRadius:responsiveHeight(0.75),
         marginHorizontal:5,
     },
     activeDotStyle:{
-        backgroundColor:"#4286f4",
+        backgroundColor:"#3f938C",
         height: responsiveHeight(1.5),
         width:responsiveHeight(1.5),
         borderRadius:responsiveHeight(0.75),
@@ -31,5 +31,13 @@ export const regularStyles = StyleSheet.create({
     title:{
         fontSize: responsiveFontSize(3.5),
         textAlign: "center"
+    },
+    description:{
+        fontSize:responsiveFontSize(2.5),
+        color:"#575757",
+        textAlign: "center",
+        
+
     }
+
 })

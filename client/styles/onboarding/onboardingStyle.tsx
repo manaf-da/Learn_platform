@@ -4,6 +4,12 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 
+import {
+  responsiveHeight,
+  responsiveWidth,
+  responsiveFontSize,
+} from "react-native-responsive-dimensions";
+
 export const styles = StyleSheet.create({
   firstContainer: {
     alignItems: "center",
@@ -28,31 +34,40 @@ export const styles = StyleSheet.create({
   },
   titleTextShape3: {
     position: "absolute",
-    left:60,
+    left: 60,
   },
   titleText: {
     fontSize: hp("4%"),
     textAlign: "center",
   },
-  descriptionWrapper:{
-    marginTop:25
+  descriptionWrapper: {
+    marginTop: 25,
   },
-  descriptionText:{
+  descriptionText: {
     textAlign: "center",
-    color:"#575757",
-    fontSize: hp("2%")
+    color: "#575757",
+    fontSize: hp("2%"),
   },
-  buttonWrapper:{
+  buttonWrapper: {
     backgroundColor: "#3f938C",
     width: wp("50%"),
     height: hp("6%"),
-    paddingVertical:18,
+    paddingVertical: 18,
     marginTop: 40,
     borderRadius: 4,
   },
-  buttonText:{
+  buttonText: {
     color: "white",
     textAlign: "center",
-    fontSize: hp("1.7%")
-  }
+    fontSize: hp("1.7%"),
+  },
+  welcomeButton: {
+    backgroundColor: "#3f938C",
+    width: responsiveWidth(88),
+    height: responsiveHeight(5.5),
+    borderRadius: responsiveHeight(0.5),
+    alignSelf: "center",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

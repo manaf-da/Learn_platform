@@ -11,7 +11,6 @@ import AppIntroSlider from "react-native-app-intro-slider";
 import { router } from "expo-router";
 import { regularStyles } from "@/styles/regular/regular.style";
 import { styles } from "@/styles/onboarding/onboardingStyle";
-import { regularStyles } from './../../styles/regular/regular.style';
 
 export default function WelcomeIntroScreen() {
   let [fontsLoaded, fontError] = useFonts({
@@ -21,22 +20,35 @@ export default function WelcomeIntroScreen() {
     MerriweatherSans_700Bold,
   });
 
-  if (!fontsLoaded || fontError) {
-    return null;
-  }
+ if(!fontsLoaded) {
+  return <View><Text>Loading Fonts...</Text></View>
+ }
+
+ if(fontError){
+  console.log(`Error loading fonts: ${fontError.message}`)
+  return <View><Text>`Error loading fonts: ${fontError.message}`</Text></View>
+ }
 
   const renderItem = ({ item }: { item: onboardingSwipeDataType }) => {
     return (
     <LinearGradient
       colors={["#E5ECF9", "#F6F7F9", "#E8EEF9"]}
-      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+      style={{ flex: 1, paddingHorizontal:16 }}
     >
       <View style={{marginTop:80}}>
         <Image source={item.image} style={{alignSelf:'center',marginBottom:30}}/>
         <Text style={[regularStyles.title, { fontFamily: "Asap_700Bold" }]}>
           {item.title}
         </Text>
-
+        <Text style={[regularStyles.description, {fontFamily:"MerriweatherSans_400Regular"}]}>
+{item.description}
+        </Text>
+        <Text style={[regularStyles.description, {fontFamily:"MerriweatherSans_400Regular"}]}>
+{item.sortDescription}
+        </Text>
+        <Text style={[regularStyles.description, {fontFamily:"MerriweatherSans_400Regular"}]}>
+{item.sortDescription2}
+        </Text>
       </View>
     </LinearGradient>
     )
@@ -54,7 +66,7 @@ export default function WelcomeIntroScreen() {
       }}
       renderNextButton={() => {
         return (
-        <View style={regularStyles.buttonContainer}>
+        <View style={styles.welcomeButton}>
           <Text
             style={[
               styles.buttonText,
@@ -68,7 +80,7 @@ export default function WelcomeIntroScreen() {
       }}
       renderDoneButton={() => {
         return (
-        <View style={regularStyles.buttonContainer}>
+        <View style={styles.welcomeButton}>
           <Text
             style={[
               styles.buttonText,
@@ -88,10 +100,6 @@ export default function WelcomeIntroScreen() {
       activeDotStyle={regularStyles.activeDotStyle}
     />
   );
-  
-export styles = StyleSheet.create({
-  slideImage:{
-    alignSelf: 'center',
-    marginBottom:30
-  }
-})
+}
+
+
