@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
+import { responsiveHeight, responsiveWidth ,responsiveFontSize} from "react-native-responsive-dimensions";
 
 export const regularStyles = StyleSheet.create({
     container:{
@@ -16,16 +16,20 @@ export const regularStyles = StyleSheet.create({
     },
     dotStyle:{
         backgroundColor:"#4286f4",
-        height: responsiveHeight(2.5),
-        width:responsiveWidth(2.5),
-        borderRadius:5,
+        height: responsiveHeight(1.5),
+        width:responsiveHeight(1.5),
+        borderRadius:responsiveHeight(0.75),
         marginHorizontal:5,
     },
     activeDotStyle:{
         backgroundColor:"#4286f4",
-        height: responsiveHeight(2.5),
-        width:responsiveWidth(2.5),
-        borderRadius:5,
+        height: responsiveHeight(1.5),
+        width:responsiveHeight(1.5),
+        borderRadius:responsiveHeight(0.75),
         marginHorizontal:5,
     },
+    title:{
+        fontSize: responsiveFontSize(3.5),
+        textAlign: "center"
+    }
 })
