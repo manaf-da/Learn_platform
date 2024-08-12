@@ -169,6 +169,9 @@ export default function LoginScreen() {
               </Text>
             )}
           </TouchableOpacity>
+          <View style={styles.signupRedirect}>
+
+          </View>
         </View>
       </ScrollView>
     </LinearGradient>
@@ -246,4 +249,5 @@ const styles = StyleSheet.create({
     overflow: "hidden",    fontFamily: "Asap_700Bold",
     textAlign: "center",
   },
+  signupRedirect: {}
 });
