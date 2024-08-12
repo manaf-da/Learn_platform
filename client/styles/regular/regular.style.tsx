@@ -13,10 +13,12 @@ export const regularStyles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: "#3f938C",
-    width: responsiveWidth(88),
-    height: responsiveHeight(2.5),
+    width: responsiveWidth(50),
+    height: responsiveHeight(4.5),
     borderRadius: 5,
-    marginHorizontal: 5,
+   marginHorizontal:responsiveWidth(22),
+   paddingTop:8
+   
   },
   dotStyle: {
     backgroundColor: "#C6C7CC",

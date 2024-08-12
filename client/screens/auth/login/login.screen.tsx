@@ -1,4 +1,5 @@
 import {
+  ActivityIndicator,
   Image,
   ScrollView,
   StyleSheet,
@@ -27,6 +28,7 @@ import {
 } from "@expo-google-fonts/merriweather-sans";
 import { useState } from "react";
 import { regularStyles } from "@/styles/regular/regular.style";
+import { router } from "expo-router";
 
 export default function LoginScreen() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -73,6 +75,8 @@ export default function LoginScreen() {
     }
   };
 
+  const handleSignIn = () => {};
+
   return (
     <LinearGradient
       colors={["#E5ECF9", "#F6F7F9"]}
@@ -102,7 +106,7 @@ export default function LoginScreen() {
               color={"A1A1A1"}
             />
             {required && (
-              <View style={regularStyles.errorContainer}>
+              <View style={styles.errorContainer}>
                 <Entypo name="cross" size={18} color={"red"} />
               </View>
             )}
@@ -136,15 +140,35 @@ export default function LoginScreen() {
                 color={"#A1A1A1"}
               />
             </View>
-            {error?.password && (
-              <View style={[regularStyles.errorContainer, { top: 145 }]}>
+            {error.password ? (
+              <View style={[styles.errorContainer, { top: 3 }]}>
                 <Entypo name="cross" size={18} color={"red"} />
-                <Text style={{ color: "red", fontSize: 11, marginTop: -1 }}>
-                  {error.password}
-                </Text>
+                <Text style={styles.errorText}>{error.password}</Text>
               </View>
-            )}
+            ) : null}
           </View>
+          <TouchableOpacity onPress={() => router.push("forgot-password")}>
+            <Text
+              style={[
+                styles.forgotPassword,
+                { fontFamily: "MerriweatherSans_600SemiBold" },
+              ]}
+            >
+              Forgot Password
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={regularStyles.buttonContainer}
+            onPress={handleSignIn}
+          >
+            {buttonSpinner ? (
+              <ActivityIndicator size="small" color={"white"} />
+            ) : (
+              <Text style={styles.btnSpinner}>
+                Sign In
+              </Text>
+            )}
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </LinearGradient>
@@ -172,11 +196,14 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     marginHorizontal: 35,
-    paddingLeft: 40,
     fontSize: 18,
     backgroundColor: "white",
     color: "#000",
     fontFamily: "MerriweatherSans_400Regular",
+  },
+  inputError: {
+    borderColor: "red",
+    borderWidth: 1,
   },
   visibleIcon: {
     position: "absolute",
@@ -194,5 +221,29 @@ const styles = StyleSheet.create({
     left: 36,
     top: 16,
     paddingLeft: 10,
+  },
+  errorContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 5,
+    marginLeft: 35,
+  },
+  errorText: {
+    color: "red",
+    fontSize: 11,
+    marginLeft: 5,
+    fontWeight: "semibold",
+  },
+  forgotPassword: {
+    marginHorizontal: 16,
+    textAlign: "right",
+    fontSize: 16,
+    marginTop: -20,
+  },
+  btnSpinner: {
+    color: "white",
+    fontSize: 18,
+    overflow: "hidden",    fontFamily: "Asap_700Bold",
+    textAlign: "center",
   },
 });
