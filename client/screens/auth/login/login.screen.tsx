@@ -169,7 +169,22 @@ export default function LoginScreen() {
               </Text>
             )}
           </TouchableOpacity>
-          <View style={styles.signupRedirect}>
+          <View style={styles.signUpRedirect}>
+            <Text style={{fontSize:18, fontFamily:"Asap_600SemiBold"}}>
+              Dont have have an account ? 
+            </Text>
+            <TouchableOpacity onPress={() => router.push("/sign-up")}>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontFamily: "Asap_600SemiBold",
+                  color: "#2467EC",
+                  marginLeft:5,
+                }}
+              >
+                Sign Up
+              </Text>
+            </TouchableOpacity>
 
           </View>
         </View>
@@ -249,5 +264,12 @@ const styles = StyleSheet.create({
     overflow: "hidden",    fontFamily: "Asap_700Bold",
     textAlign: "center",
   },
-  signupRedirect: {}
+  signUpRedirect: {
+    flexDirection:"row",
+    marginHorizontal:16,
+    justifyContent: "center",
+    marginBottom:20,
+    marginTop: 10,
+    
+  }
 });
