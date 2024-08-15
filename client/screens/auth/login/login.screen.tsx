@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import {
   Entypo,
+  FontAwesome,
   Fontisto,
   Ionicons,
   SimpleLineIcons,
@@ -151,10 +152,10 @@ export default function LoginScreen() {
             <Text
               style={[
                 styles.forgotPassword,
-                { fontFamily: "MerriweatherSans_600SemiBold" },
+                { fontFamily: "Asap_600SemiBold" },
               ]}
             >
-              Forgot Password
+              Forgot Password?
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -164,28 +165,20 @@ export default function LoginScreen() {
             {buttonSpinner ? (
               <ActivityIndicator size="small" color={"white"} />
             ) : (
-              <Text style={styles.btnSpinner}>
-                Sign In
-              </Text>
+              <Text style={styles.btnSpinner}>Sign In</Text>
             )}
           </TouchableOpacity>
+          <View style={{flexDirection:"row",alignItems:"center"}}>
+            <FontAwesome name="google" size={24} />
+
+          </View>
           <View style={styles.signUpRedirect}>
-            <Text style={{fontSize:18, fontFamily:"Asap_600SemiBold"}}>
-              Dont have have an account ? 
+            <Text style={{ fontSize: 18, fontFamily: "Asap_600SemiBold" }}>
+              Don't have have an account ?
             </Text>
             <TouchableOpacity onPress={() => router.push("/sign-up")}>
-              <Text
-                style={{
-                  fontSize: 18,
-                  fontFamily: "Asap_600SemiBold",
-                  color: "#2467EC",
-                  marginLeft:5,
-                }}
-              >
-                Sign Up
-              </Text>
+              <Text style={styles.accountSignup}>Sign Up</Text>
             </TouchableOpacity>
-
           </View>
         </View>
       </ScrollView>
@@ -261,15 +254,21 @@ const styles = StyleSheet.create({
   btnSpinner: {
     color: "white",
     fontSize: 18,
-    overflow: "hidden",    fontFamily: "Asap_700Bold",
+    overflow: "hidden",
+    fontFamily: "Asap_700Bold",
     textAlign: "center",
   },
   signUpRedirect: {
-    flexDirection:"row",
-    marginHorizontal:16,
+    flexDirection: "row",
+    marginHorizontal: 16,
     justifyContent: "center",
-    marginBottom:20,
+    marginBottom: 20,
     marginTop: 10,
-    
-  }
+  },
+  accountSignup: {
+    fontSize: 18,
+    fontFamily: "Asap_600SemiBold",
+    color: "#2467EC",
+    marginLeft: 5,
+  },
 });
