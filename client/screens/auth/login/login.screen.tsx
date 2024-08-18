@@ -43,6 +43,20 @@ export default function LoginScreen() {
     password: "",
   });
 
+  let [fontloader,fontError] = useFonts({
+    MerriweatherSans_400Regular,
+    MerriweatherSans_500Medium,
+    MerriweatherSans_600SemiBold,
+    MerriweatherSans_700Bold,
+    Asap_700Bold,
+  Asap_600SemiBold,
+
+  })
+
+  if (!fontloader || fontError) {
+    return null;
+  }
+
   const handlePasswordValidation = (value: string) => {
     const password = value;
     const passwordSpecialCharacter = /(?=.*[!@#$&*])/;
@@ -148,7 +162,7 @@ export default function LoginScreen() {
               </View>
             ) : null}
           </View>
-          <TouchableOpacity onPress={() => router.push("forgot-password")}>
+          <TouchableOpacity onPress={() => router.push("/(routes)/forgot-password")}>
             <Text
               style={[
                 styles.forgotPassword,
@@ -168,15 +182,21 @@ export default function LoginScreen() {
               <Text style={styles.btnSpinner}>Sign In</Text>
             )}
           </TouchableOpacity>
-          <View style={{flexDirection:"row",alignItems:"center"}}>
-            <FontAwesome name="google" size={24} />
+          <View style={{flexDirection:"row",alignItems:"center",justifyContent:"center", marginTop:5,gap:16}}>
+
+            <TouchableOpacity>
+            <FontAwesome name="google" size={30} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <FontAwesome name="github" size={30} />
+            </TouchableOpacity>
 
           </View>
           <View style={styles.signUpRedirect}>
             <Text style={{ fontSize: 18, fontFamily: "Asap_600SemiBold" }}>
               Don't have have an account ?
             </Text>
-            <TouchableOpacity onPress={() => router.push("/sign-up")}>
+            <TouchableOpacity onPress={() => router.push("/(routes)/sign-up")}>
               <Text style={styles.accountSignup}>Sign Up</Text>
             </TouchableOpacity>
           </View>
@@ -260,10 +280,8 @@ const styles = StyleSheet.create({
   },
   signUpRedirect: {
     flexDirection: "row",
-    marginHorizontal: 16,
+    marginHorizontal: 14,
     justifyContent: "center",
-    marginBottom: 20,
-    marginTop: 10,
   },
   accountSignup: {
     fontSize: 18,
