@@ -31,7 +31,7 @@ import {
   import { regularStyles } from "@/styles/regular/regular.style";
   import { router } from "expo-router";
 
-  export default function LoginScreen() {
+  export default function SignUpScreen() {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [buttonSpinner, setButtonSpinner] = useState(false);
     const [userInfo, setUserInfo] = useState({
@@ -179,7 +179,7 @@ import {
               {buttonSpinner ? (
                 <ActivityIndicator size="small" color={"white"} />
               ) : (
-                <Text style={styles.btnSpinner}>Sign In</Text>
+                <Text style={styles.btnSpinner}>Sign Up</Text>
               )}
             </TouchableOpacity>
             <View style={{flexDirection:"row",alignItems:"center",justifyContent:"center", marginTop:5,gap:16}}>
@@ -194,10 +194,10 @@ import {
             </View>
             <View style={styles.signUpRedirect}>
               <Text style={{ fontSize: 18, fontFamily: "Asap_600SemiBold" }}>
-                Don't have have an account ?
+                Do you have an account
               </Text>
               <TouchableOpacity onPress={() => router.push("/(routes)/sign-up")}>
-                <Text style={styles.accountSignup}>Sign Up</Text>
+                <Text style={styles.accountSignup}>Sign In</Text>
               </TouchableOpacity>
             </View>
           </View>
