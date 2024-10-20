@@ -90,7 +90,9 @@ import {
       }
     };
 
-    const handleSignIn = () => {};
+    const handleSignIn = () => {
+        router.push("/(routes)/verifyAccount")
+    };
 
     return (
       <LinearGradient
@@ -100,9 +102,10 @@ import {
         <ScrollView>
           <Image
             style={styles.signImage}
-            source={require("@/assets/sign-in/sign_in.png")}
+            source={require("@/assets/sign-in/signup.png")}
           />
-          <Text style={styles.loginText}> Login to your Account</Text>
+          <Text style={styles.loginText}> Get Started</Text>
+          <Text style={styles.loginSubtext}> Sign up to enjoy full access to all features.</Text>
           <View style={styles.inputContainer}>
             <View>
               <TextInput
@@ -162,16 +165,6 @@ import {
                 </View>
               ) : null}
             </View>
-            <TouchableOpacity onPress={() => router.push("/(routes)/forgot-password")}>
-              <Text
-                style={[
-                  styles.forgotPassword,
-                  { fontFamily: "Asap_600SemiBold" },
-                ]}
-              >
-                Forgot Password?
-              </Text>
-            </TouchableOpacity>
             <TouchableOpacity
               style={regularStyles.buttonContainer}
               onPress={handleSignIn}
@@ -185,16 +178,16 @@ import {
             <View style={{flexDirection:"row",alignItems:"center",justifyContent:"center", marginTop:5,gap:16}}>
 
               <TouchableOpacity>
-              <FontAwesome name="google" size={30} />
+              <FontAwesome name="google" size={20} />
               </TouchableOpacity>
               <TouchableOpacity>
-              <FontAwesome name="github" size={30} />
+              <FontAwesome name="github" size={20} />
               </TouchableOpacity>
 
             </View>
             <View style={styles.signUpRedirect}>
               <Text style={{ fontSize: 18, fontFamily: "Asap_600SemiBold" }}>
-                Do you have an account
+                Alreay have an account?
               </Text>
               <TouchableOpacity onPress={() => router.push("/(routes)/sign-up")}>
                 <Text style={styles.accountSignup}>Sign In</Text>
@@ -218,6 +211,10 @@ import {
       fontSize: 24,
       fontFamily: "Asap_700Bold",
       marginTop: 30,
+    },
+    loginSubtext: {
+        textAlign: "center",
+      fontSize: 16,
     },
     inputContainer: {
       marginHorizontal: 16,

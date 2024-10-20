@@ -122,7 +122,7 @@ export default function LoginScreen() {
             />
             {required && (
               <View style={styles.errorContainer}>
-                <Entypo name="cross" size={18} color={"red"} />
+                <Entypo name="cross" size={20} color={"red"} />
               </View>
             )}
             <View style={{ marginTop: 15 }}>
@@ -141,11 +141,11 @@ export default function LoginScreen() {
                 {isPasswordVisible ? (
                   <Ionicons
                     name="eye-off-outline"
-                    size={26}
+                    size={20}
                     color={"#A1A1A1"}
                   />
                 ) : (
-                  <Ionicons name="eye-outline" size={26} color={"#A1A1A1"} />
+                  <Ionicons name="eye-outline" size={20} color={"#A1A1A1"} />
                 )}
               </TouchableOpacity>
               <SimpleLineIcons
@@ -157,7 +157,7 @@ export default function LoginScreen() {
             </View>
             {error.password ? (
               <View style={[styles.errorContainer, { top: 3 }]}>
-                <Entypo name="cross" size={18} color={"red"} />
+                <Entypo name="cross" size={20} color={"red"} />
                 <Text style={styles.errorText}>{error.password}</Text>
               </View>
             ) : null}
@@ -183,14 +183,12 @@ export default function LoginScreen() {
             )}
           </TouchableOpacity>
           <View style={{flexDirection:"row",alignItems:"center",justifyContent:"center", marginTop:5,gap:16}}>
-
             <TouchableOpacity>
-            <FontAwesome name="google" size={30} />
+            <FontAwesome name="google" size={20} />
             </TouchableOpacity>
             <TouchableOpacity>
-            <FontAwesome name="github" size={30} />
+            <FontAwesome name="github" size={20} />
             </TouchableOpacity>
-
           </View>
           <View style={styles.signUpRedirect}>
             <Text style={{ fontSize: 18, fontFamily: "Asap_600SemiBold" }}>
