@@ -9,6 +9,7 @@ import {
     View,
   } from "react-native";
   import {
+      AntDesign,
     Entypo,
     FontAwesome,
     Fontisto,
@@ -35,6 +36,7 @@ import {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [buttonSpinner, setButtonSpinner] = useState(false);
     const [userInfo, setUserInfo] = useState({
+    name:"",
       email: "",
       password: "",
     });
@@ -108,6 +110,24 @@ import {
           <Text style={styles.loginSubtext}> Sign up to enjoy full access to all features.</Text>
           <View style={styles.inputContainer}>
             <View>
+            <TextInput
+                style={[styles.input, { paddingLeft: 40, marginBottom:-15 }]}
+                keyboardType="default"
+                value={userInfo.name}
+                placeholder="Adam Smith"
+                onChangeText={(value) =>
+                  setUserInfo({ ...userInfo, name: value })
+                }
+              />
+               <AntDesign
+                style={styles.icon1}
+                name="user"
+                size={20}
+                color={"A1A1A1"}
+              />
+            </View>
+
+            <View>
               <TextInput
                 style={[styles.input, { paddingLeft: 40 }]}
                 keyboardType="email-address"
@@ -175,8 +195,7 @@ import {
                 <Text style={styles.btnSpinner}>Sign Up</Text>
               )}
             </TouchableOpacity>
-            <View style={{flexDirection:"row",alignItems:"center",justifyContent:"center", marginTop:5,gap:16}}>
-
+            <View style={{flexDirection:"row", alignItems:"center", justifyContent:"center", marginTop:5, gap:16}}>
               <TouchableOpacity>
               <FontAwesome name="google" size={20} />
               </TouchableOpacity>
@@ -187,9 +206,9 @@ import {
             </View>
             <View style={styles.signUpRedirect}>
               <Text style={{ fontSize: 18, fontFamily: "Asap_600SemiBold" }}>
-                Alreay have an account?
+                Already have an account?
               </Text>
-              <TouchableOpacity onPress={() => router.push("/(routes)/sign-up")}>
+              <TouchableOpacity onPress={() => router.push("/(routes)/login")}>
                 <Text style={styles.accountSignup}>Sign In</Text>
               </TouchableOpacity>
             </View>
