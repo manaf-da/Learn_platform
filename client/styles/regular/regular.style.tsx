@@ -18,7 +18,6 @@ export const regularStyles = StyleSheet.create({
     borderRadius: 5,
    marginHorizontal:responsiveWidth(22),
    paddingTop:8
-   
   },
   dotStyle: {
     backgroundColor: "#C6C7CC",
